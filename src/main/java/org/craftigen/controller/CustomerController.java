@@ -2,6 +2,7 @@ package org.craftigen.controller;
 
 import org.craftigen.db.DbConnection;
 import org.craftigen.model.Customer;
+import org.craftigen.model.Product;
 import org.craftigen.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,6 @@ public class CustomerController {
 
     @GetMapping("/get-customer")
     public List<Customer> getCustomerDetails(){
-//        DbConnection instance = DbConnection.getInstance();
         return repository.findAll();
     };
     @PostMapping("/add-customer")

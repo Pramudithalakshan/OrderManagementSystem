@@ -1,7 +1,5 @@
 package org.craftigen.model;
 
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,14 +9,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
-@ToString
 @NoArgsConstructor
-@Document(collection = "customer")
-public class Customer {
+@ToString
+@Document(collection = "product")
+public class Product {
     @Id
     private String id;
-    private String first_name;
-    private String last_name;
-    private String phone_number;
-    private String city;
+    private String name;
+    private Double price;
+    private String added_date;
+    private String expiry_date;
 }
