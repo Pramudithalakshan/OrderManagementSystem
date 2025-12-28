@@ -1,6 +1,7 @@
 package org.craftigen.controller;
 
 import org.craftigen.model.Order;
+import org.craftigen.model.dtos.OrderDTO;
 import org.craftigen.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +22,14 @@ public class OrderController {
         return repository.findAll();
     }
     @PostMapping("/add-order")
-    public void addOrderDetails(@RequestBody Order order){
-        repository.save(order);
+    public void addOrderDetails(@RequestBody OrderDTO order){
+        Order persistentOrder = new Order();
+        persistentOrder.setId(order.getId());
+        persistentOrder.setDate(order.getDate());
+        persistentOrder.setName(order.getName());
+        persistentOrder.setPrice(order.getPrice());
+        persistentOrder.setQty(order.getQty());
+        repository.save(persistentOrder);
     }
 
 }
