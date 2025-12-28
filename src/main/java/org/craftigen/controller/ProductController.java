@@ -12,8 +12,11 @@ import java.util.List;
 @RequestMapping("/product")
 
 public class ProductController {
+    private ProductRepository repository;
     @Autowired
-    ProductRepository repository;
+    ProductController(ProductRepository repository){
+        this.repository=repository;
+    }
     @GetMapping("/get-product")
     public List<Product> getProductDetails(){
         return repository.findAll();

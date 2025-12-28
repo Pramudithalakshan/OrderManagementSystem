@@ -10,10 +10,12 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @RequestMapping("/orders")
-
 public class OrderController {
+    private OrderRepository repository;
     @Autowired
-    OrderRepository repository;
+    OrderController(OrderRepository repository){
+        this.repository=repository;
+    }
     @GetMapping("/get-order")
     public List<Order> getOrderDetails(){
         return repository.findAll();
