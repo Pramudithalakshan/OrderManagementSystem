@@ -1,6 +1,4 @@
 spring:
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      database: oms_db
+      uri: mongodb+srv://root:Root123@cluster0.1ujqepd.mongodb.net/oms_db
