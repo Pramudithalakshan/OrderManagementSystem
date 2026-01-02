@@ -2,3 +2,6 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://root:Root123@cluster0.1ujqepd.mongodb.net/oms_db
+
+server:
+  port: ${PORT:8080}

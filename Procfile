@@ -1,0 +1,1 @@
+web: java -jar org.craftigen-1.0-SNAPSHOT.jar
