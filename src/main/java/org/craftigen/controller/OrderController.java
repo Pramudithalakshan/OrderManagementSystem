@@ -2,7 +2,6 @@ package org.craftigen.controller;
 
 import org.craftigen.model.Order;
 import org.craftigen.dtos.OrderDTO;
-import org.craftigen.repository.OrderRepository;
 import org.craftigen.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
-    private OrderService orderService;
+    private final OrderService orderService;
     @Autowired
     OrderController(OrderService orderService){
         this.orderService = orderService;
