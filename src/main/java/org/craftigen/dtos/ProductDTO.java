@@ -1,4 +1,4 @@
-package org.craftigen.model.dtos;
+package org.craftigen.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDTO {
+public class ProductDTO {
     private String id;
     private String name;
-    private String date;
-    private int qty;
-    private double price;
+    private Double price;
+    private String added_date;
+    private String expiry_date;
 }

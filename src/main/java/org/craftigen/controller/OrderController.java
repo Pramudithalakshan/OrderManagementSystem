@@ -1,7 +1,7 @@
 package org.craftigen.controller;
 
 import org.craftigen.model.Order;
-import org.craftigen.model.dtos.OrderDTO;
+import org.craftigen.dtos.OrderDTO;
 import org.craftigen.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

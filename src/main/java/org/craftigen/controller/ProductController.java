@@ -1,7 +1,7 @@
 package org.craftigen.controller;
 
 import org.craftigen.model.Product;
-import org.craftigen.model.dtos.ProductDTO;
+import org.craftigen.dtos.ProductDTO;
 import org.craftigen.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

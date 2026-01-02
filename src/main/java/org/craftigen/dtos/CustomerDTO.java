@@ -1,4 +1,4 @@
-package org.craftigen.model.dtos;
+package org.craftigen.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
