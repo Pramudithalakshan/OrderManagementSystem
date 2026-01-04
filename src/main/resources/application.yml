@@ -1,7 +1,10 @@
+
 spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE}
   data:
     mongodb:
-      uri: mongodb+srv://root:Root123@cluster0.1ujqepd.mongodb.net/oms_db
+      uri: ${MONGODB_URI}
 
 server:
   port: ${PORT:8080}
