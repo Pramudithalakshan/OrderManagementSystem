@@ -1,7 +1,5 @@
 
 spring:
-  profiles:
-    active: ${SPRING_PROFILES_ACTIVE}
   data:
     mongodb:
       uri: ${MONGODB_URI}
