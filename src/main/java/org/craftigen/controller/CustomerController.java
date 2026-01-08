@@ -1,9 +1,8 @@
 package org.craftigen.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.craftigen.dtos.CustomerDTO;
-import org.craftigen.entity.Customer;
-import org.craftigen.service.CustomerImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.craftigen.service.impl.CustomerImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,15 +10,12 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/customer")
+@RequiredArgsConstructor
 public class CustomerController {
     private final CustomerImpl customerService;
-    @Autowired
-    CustomerController(CustomerImpl customerService){
-     this.customerService=customerService;
-    }
 
     @GetMapping("/get-customer")
-    public List<Customer> getCustomerDetails(){
+    public List<CustomerDTO> getCustomerDetails(){
         return customerService.getCustomer();
     }
     @PostMapping("/add-customer")

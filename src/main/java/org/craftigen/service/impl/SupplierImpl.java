@@ -1,29 +1,27 @@
-package org.craftigen.service;
+package org.craftigen.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.craftigen.dtos.SupplierDTO;
-import org.craftigen.entity.Supplier;
 import org.craftigen.mapper.SupplierMapper;
 import org.craftigen.repository.SupplierRepository;
+import org.craftigen.service.SupplierService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 @Service
+@RequiredArgsConstructor
 public class SupplierImpl implements SupplierService {
     private final SupplierRepository repository;
-    private final SupplierMapper mapper;
+    private final SupplierMapper supplierMapper;
 
-    SupplierImpl(SupplierRepository repository, SupplierMapper mapper){
-        this.repository=repository;
-        this.mapper=mapper;
-    }
     @Override
     public void registerSupplier(@RequestBody SupplierDTO supplier) {
-        repository.save(mapper.toEntity(supplier));
+        repository.save(supplierMapper.toEntity(supplier));
     }
 
     @Override
-    public List<Supplier> getSupplier() {
-        return List.of();
+    public List<SupplierDTO> getSupplier() {
+        return supplierMapper.toDto(repository.findAll());
     }
 }

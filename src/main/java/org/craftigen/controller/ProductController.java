@@ -1,9 +1,8 @@
 package org.craftigen.controller;
 
-import org.craftigen.entity.Product;
+import lombok.RequiredArgsConstructor;
 import org.craftigen.dtos.ProductDTO;
 import org.craftigen.service.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,15 +10,12 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @RequestMapping("/product")
-
+@RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
-    @Autowired
-    ProductController(ProductService productService){
-        this.productService=productService;
-    }
+
     @GetMapping("/get-product")
-    public List<Product> getProductDetails(){
+    public List<ProductDTO> getProductDetails(){
         return productService.getProduct();
     }
     @PostMapping("/add-product")
