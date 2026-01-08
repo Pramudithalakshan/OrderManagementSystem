@@ -21,5 +21,8 @@ public class OrderController {
     public void addOrderDetails(@RequestBody OrderDTO order){
         orderService.addOrder(order);
     }
-
+    @DeleteMapping("/remove-order/{id}")
+    public void deleteOrder(@PathVariable String id){
+        orderService.deleteOrder(id);
+    }
 }

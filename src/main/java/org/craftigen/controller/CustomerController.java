@@ -22,4 +22,10 @@ public class CustomerController {
      public void addCustomerDetails(@RequestBody CustomerDTO customer){
        customerService.addCustomer(customer);
     }
+
+    @DeleteMapping("/remove-customer/{id}")
+    public void deleteCustomer(@PathVariable String id){
+        customerService.deleteCustomer(id);
+    }
+
 }

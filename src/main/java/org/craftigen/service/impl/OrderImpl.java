@@ -23,4 +23,9 @@ public class OrderImpl implements OrderService {
     public void addOrder(OrderDTO order) {
         repository.save(orderMapper.toEntity(order));
     }
+
+    @Override
+    public void deleteOrder(String id) {
+        repository.deleteById(id);
+    }
 }

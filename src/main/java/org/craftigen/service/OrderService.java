@@ -8,4 +8,5 @@ import java.util.List;
 public interface OrderService {
      List<OrderDTO> getOrder();
      void addOrder(@RequestBody OrderDTO order);
+     void deleteOrder(String id);
 }
