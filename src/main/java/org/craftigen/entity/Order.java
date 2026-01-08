@@ -1,4 +1,4 @@
-package org.craftigen.model;
+package org.craftigen.entity;
 
 
 import lombok.AllArgsConstructor;

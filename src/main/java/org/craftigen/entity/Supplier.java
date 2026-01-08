@@ -8,15 +8,17 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
-@Document(collection = "product")
-public class Product {
+@Document(collection = "supplier")
+public class Supplier {
     @Id
     private String id;
-    private String name;
-    private Double price;
-    private String addedDate;
-    private String expiryDate;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String contact;
+    private String company;
+    private String registeredDate;
 }

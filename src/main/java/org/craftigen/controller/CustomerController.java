@@ -1,8 +1,8 @@
 package org.craftigen.controller;
 
-import org.craftigen.model.Customer;
 import org.craftigen.dtos.CustomerDTO;
-import org.craftigen.service.CustomerService;
+import org.craftigen.entity.Customer;
+import org.craftigen.service.CustomerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,9 +12,9 @@ import java.util.List;
 @CrossOrigin
 @RequestMapping("/customer")
 public class CustomerController {
-    private final CustomerService customerService;
+    private final CustomerImpl customerService;
     @Autowired
-    CustomerController(CustomerService customerService){
+    CustomerController(CustomerImpl customerService){
      this.customerService=customerService;
     }
 
