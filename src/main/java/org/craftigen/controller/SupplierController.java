@@ -22,5 +22,8 @@ public class SupplierController {
     public List<SupplierDTO> getSupplierS(){
         return supplierService.getSupplier();
     }
-
+    @DeleteMapping("/remove-customer/{id}")
+    public void deleteCustomer(@PathVariable String id){
+        supplierService.deleteSupplier(id);
+    }
 }

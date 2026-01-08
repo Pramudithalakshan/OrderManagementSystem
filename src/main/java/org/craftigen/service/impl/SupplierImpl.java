@@ -24,4 +24,9 @@ public class SupplierImpl implements SupplierService {
     public List<SupplierDTO> getSupplier() {
         return supplierMapper.toDto(repository.findAll());
     }
+
+    @Override
+    public void deleteSupplier(String id) {
+        repository.deleteById(id);
+    }
 }

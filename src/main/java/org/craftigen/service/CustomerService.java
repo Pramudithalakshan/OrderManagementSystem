@@ -8,4 +8,5 @@ import java.util.List;
 public interface CustomerService {
      List<CustomerDTO> getCustomer();
      void addCustomer(@RequestBody CustomerDTO customer);
+     void deleteCustomer(String id);
 }

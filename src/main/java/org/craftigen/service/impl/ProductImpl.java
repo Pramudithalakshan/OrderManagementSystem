@@ -23,4 +23,9 @@ public class ProductImpl implements ProductService {
     public void addProduct(ProductDTO product) {
         repository.save(productMapper.toEntity(product));
     }
+
+    @Override
+    public void deleteProduct(String id) {
+        repository.deleteById(id);
+    }
 }

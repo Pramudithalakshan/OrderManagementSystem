@@ -24,4 +24,10 @@ public class CustomerImpl implements CustomerService {
     public void addCustomer(CustomerDTO customer) {
         repository.save(customerMapper.toEntity(customer));
     }
+
+    @Override
+    public void deleteCustomer(String id) {
+        repository.deleteById(id);
+    }
+
 }
